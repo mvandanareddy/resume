@@ -43,7 +43,7 @@ interface ResumeData {
   }>;
 }
 
-const Resume: React.FC = () => {
+const Resume = () => {
   const [resumeData, setResumeData] = React.useState<ResumeData | null>(null);
 
   React.useEffect(() => {

@@ -84,13 +84,41 @@ resume_data = {
     ]
 }
 
+# Skills data
+skills_data = {
+    "frontend": [
+        {"name": "React", "level": 90},
+        {"name": "TypeScript", "level": 85},
+        {"name": "HTML/CSS", "level": 90},
+        {"name": "JavaScript", "level": 85}
+    ],
+    "backend": [
+        {"name": "Python", "level": 90},
+        {"name": "Flask", "level": 85},
+        {"name": "Node.js", "level": 80},
+        {"name": "Express", "level": 80}
+    ],
+    "databases": [
+        {"name": "PostgreSQL", "level": 85},
+        {"name": "MongoDB", "level": 80},
+        {"name": "MySQL", "level": 85}
+    ],
+    "tools": [
+        {"name": "Git", "level": 90},
+        {"name": "Docker", "level": 80},
+        {"name": "AWS", "level": 85},
+        {"name": "Jenkins", "level": 75}
+    ]
+}
+
 @app.route('/')
 def home():
     return jsonify({
         "message": "Welcome to the Portfolio API",
         "endpoints": {
             "resume": "/api/resume",
-            "contact": "/api/contact"
+            "contact": "/api/contact",
+            "skills": "/api/skills"
         }
     })
 
@@ -151,6 +179,11 @@ def contact():
 
     # Handle GET request
     return jsonify({"message": "Contact endpoint is working"}), 200
+
+@app.route('/api/skills', methods=['GET'])
+def get_skills():
+    return jsonify(skills_data)
+
 print("EMAIL_USER:", os.getenv('EMAIL_USER'))  # Print the email user
 print("EMAIL_PASSWORD:", os.getenv('EMAIL_PASSWORD')) 
 if __name__ == '__main__':
