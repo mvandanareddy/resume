@@ -23,7 +23,8 @@ app.config.update(
     MAIL_PORT=587,
     MAIL_USE_TLS=True,
     MAIL_USERNAME=os.getenv('EMAIL_USER'),
-    MAIL_PASSWORD=os.getenv('EMAIL_PASSWORD')
+    MAIL_PASSWORD=os.getenv('EMAIL_PASSWORD'),
+    MAIL_DEFAULT_SENDER=os.getenv('EMAIL_USER')
 )
 
 mail = Mail(app)
@@ -150,6 +151,7 @@ def contact():
 
     # Handle GET request
     return jsonify({"message": "Contact endpoint is working"}), 200
-
+print("EMAIL_USER:", os.getenv('EMAIL_USER'))  # Print the email user
+print("EMAIL_PASSWORD:", os.getenv('EMAIL_PASSWORD')) 
 if __name__ == '__main__':
     app.run(debug=True)
