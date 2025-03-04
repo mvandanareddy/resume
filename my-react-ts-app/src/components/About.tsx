@@ -19,11 +19,9 @@ const About = () => (
             />
           </div>
           <p className="text-lg text-blue-100 leading-relaxed">
-            Innovative Software Developer with a passion for creating efficient and scalable solutions. 
-            Specialized in full-stack development with expertise in modern web technologies and cloud platforms.
+          Innovative Software Developer with expertise in Python, React, and database management, specializing in full-stack development. Passionate about building scalable web solutions 
           </p>
           <p className="text-lg text-blue-100 leading-relaxed mt-6">
-            Currently focused on cloud-native applications and microservices architecture, 
             while continuously expanding knowledge in emerging technologies.
           </p>
         </div>

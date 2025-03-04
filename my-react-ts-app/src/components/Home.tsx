@@ -27,7 +27,7 @@ const Home = () => (
         <p className="text-2xl text-blue-200 mb-8 animate-fade-in-delay">Software Developer | Full Stack Engineer</p>
         <div className="flex justify-center space-x-8 mb-12">
           <a 
-            href="https://linkedin.com/in/vandana-madhireddy-31661a241" 
+            href="https://www.linkedin.com/in/vandana-madhireddy-31661a241/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-icon-link"
@@ -41,7 +41,7 @@ const Home = () => (
             <FaEnvelope className="text-4xl transform hover:scale-110 transition-all" />
           </a>
           <a 
-            href="https://github.com/yourgithub" 
+            href="https://github.com/mvandanareddy/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-icon-link"

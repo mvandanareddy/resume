@@ -83,7 +83,6 @@ const Skills = () => {
                   <li key={skill.name}>
                     <div className="flex justify-between mb-2">
                       <span>{skill.name}</span>
-                      <span>{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-700/50 rounded-full h-2.5">
                       <div 

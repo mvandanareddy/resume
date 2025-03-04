@@ -38,34 +38,52 @@ resume_data = {
         "phone": "+91 9573925314",
         "location": "Hyderabad, India",
         "linkedin": "https://linkedin.com/in/vandana-madhireddy-31661a241",
-        "github": "https://github.com/yourgithub"
+        "github": "https://github.com/mvandanareddy/"
     },
-    "education": [
-        {
-            "degree": "B.Tech in Computer Science",
-            "school": "Your University Name",
-            "year": "2019-2023",
-            "gpa": "8.5/10"
-        }
-    ],
+   
+  "education": [
+    {
+      "degree": "Bachelor of Technology",
+      "school": "Narasimha Reddy Engineering College",
+      "year": "2019-2023",
+      "gpa": "7.79"
+    },
+    {
+      "degree": "Intermediate Education",
+      "school": "Vandana Junior College",
+      "year": "2017-2019",
+      "percentage": "85%"
+    },
+    {
+      "degree": "SSC",
+      "school": "Z.P. High School Muneerabad",
+      "year": "2007-2017",
+      "gpa": "9.2"
+    }
+  ],
+
+
     "experience": [
         {
             "title": "Software Developer",
-            "company": "Company Name",
+            "company": "FlyingFox Labs Pvt Ltd",
             "location": "Hyderabad, India",
-            "period": "2023 - Present",
+            "period": "july 2024 - Present",
             "responsibilities": [
-                "Developed and maintained web applications using React and Flask",
-                "Implemented RESTful APIs and microservices",
-                "Collaborated with cross-functional teams to deliver projects"
+             " Developed and maintained scalable web applications using React, TypeScript, and WordPress." , 
+            "Integrated user authentication systems using JWT and OAuth for secure access."  ,
+            "Designed intuitive, responsive UI components with Tamagui, enhancing user experience." , 
+            "Conducted rigorous testing to ensure application reliability and performance."  ,
+
             ]
         }
     ],
     "skills": {
         "programming": ["Python", "JavaScript", "TypeScript", "Java"],
-        "frameworks": ["React", "Flask", "Node.js", "Express"],
-        "databases": ["PostgreSQL", "MongoDB", "MySQL"],
-        "tools": ["Git", "Docker", "AWS", "Jenkins"]
+        "frameworks": ["React", "Flask" ],
+        "frontend": ["HTML/CSS", "JavaScript"],
+        "databases": ["SQL","MySQL"],
+        "tools": ["Git", "AWS", "Power BI", "Linux"]
     },
     "projects": [
         {
@@ -76,38 +94,44 @@ resume_data = {
         }
     ],
     "certifications": [
-        {
-            "name": "AWS Certified Cloud Practitioner",
-            "issuer": "Amazon Web Services",
-            "date": "2023"
-        }
+         {
+      "name": "Basic Python Certificate",
+      "issuer": "HackerRank",
+    },
+    {
+      "name": "Web Designing Certificate of Assessment",
+      "issuer": "TATA Communications",
+    },
+    {
+      "name": "Power BI Certificate",
+      "issuer": "TNX",
+    }
     ]
 }
 
 # Skills data
 skills_data = {
     "frontend": [
-        {"name": "React", "level": 90},
-        {"name": "TypeScript", "level": 85},
-        {"name": "HTML/CSS", "level": 90},
-        {"name": "JavaScript", "level": 85}
+        {"name": "React"},
+        {"name": "TypeScript"},
+        {"name": "HTML/CSS"},
+        {"name": "JavaScript"},
+        {"name": "Tamagui"},
     ],
     "backend": [
-        {"name": "Python", "level": 90},
-        {"name": "Flask", "level": 85},
-        {"name": "Node.js", "level": 80},
-        {"name": "Express", "level": 80}
+        {"name": "Python"},
+        {"name": "Flask"},
+        {'name':'java'  },
     ],
     "databases": [
-        {"name": "PostgreSQL", "level": 85},
-        {"name": "MongoDB", "level": 80},
-        {"name": "MySQL", "level": 85}
+        {"name": "MySQL"},
+        {"name": "SQL"},
     ],
     "tools": [
-        {"name": "Git", "level": 90},
-        {"name": "Docker", "level": 80},
-        {"name": "AWS", "level": 85},
-        {"name": "Jenkins", "level": 75}
+        {"name": "Git"},
+        {"name": "Linux"},
+        {"name": "AWS"},
+        {"name":"Power BI"},
     ]
 }
 
