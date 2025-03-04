@@ -23,7 +23,8 @@ app.config.update(
     MAIL_PORT=587,
     MAIL_USE_TLS=True,
     MAIL_USERNAME=os.getenv('EMAIL_USER'),
-    MAIL_PASSWORD=os.getenv('EMAIL_PASSWORD')
+    MAIL_PASSWORD=os.getenv('EMAIL_PASSWORD'),
+    MAIL_DEFAULT_SENDER=os.getenv('EMAIL_USER')
 )
 
 mail = Mail(app)
