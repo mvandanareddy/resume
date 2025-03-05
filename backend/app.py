@@ -1,9 +1,12 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from flask_mail import Mail, Message
+
+from io import BytesIO
 import os
 from dotenv import load_dotenv
-
+from data.resume_data import resume_data, skills_data
+from utils.pdf_generate import create_resume_pdf
 load_dotenv()
 
 app = Flask(__name__)
@@ -30,110 +33,7 @@ app.config.update(
 mail = Mail(app)
 
 # Resume data
-resume_data = {
-    "personal_info": {
-        "name": "Vandana Madhireddy",
-        "title": "Software Developer",
-        "email": "madhireddyvandana@gmail.com",
-        "phone": "+91 9573925314",
-        "location": "Hyderabad, India",
-        "linkedin": "https://linkedin.com/in/vandana-madhireddy-31661a241",
-        "github": "https://github.com/mvandanareddy/"
-    },
-   
-  "education": [
-    {
-      "degree": "Bachelor of Technology",
-      "school": "Narasimha Reddy Engineering College",
-      "year": "2019-2023",
-      "gpa": "7.79"
-    },
-    {
-      "degree": "Intermediate Education",
-      "school": "Vandana Junior College",
-      "year": "2017-2019",
-      "percentage": "85%"
-    },
-    {
-      "degree": "SSC",
-      "school": "Z.P. High School Muneerabad",
-      "year": "2007-2017",
-      "gpa": "9.2"
-    }
-  ],
 
-
-    "experience": [
-        {
-            "title": "Software Developer",
-            "company": "FlyingFox Labs Pvt Ltd",
-            "location": "Hyderabad, India",
-            "period": "july 2024 - Present",
-            "responsibilities": [
-             " Developed and maintained scalable web applications using React, TypeScript, and WordPress." , 
-            "Integrated user authentication systems using JWT and OAuth for secure access."  ,
-            "Designed intuitive, responsive UI components with Tamagui, enhancing user experience." , 
-            "Conducted rigorous testing to ensure application reliability and performance."  ,
-
-            ]
-        }
-    ],
-    "skills": {
-        "programming": ["Python", "JavaScript", "TypeScript", "Java"],
-        "frameworks": ["React", "Flask" ],
-        "frontend": ["HTML/CSS", "JavaScript"],
-        "databases": ["SQL","MySQL"],
-        "tools": ["Git", "AWS", "Power BI", "Linux"]
-    },
-    "projects": [
-        {
-            "name": "E-commerce Platform",
-            "description": "Built a full-stack e-commerce platform using React and Flask",
-            "technologies": ["React", "Flask", "PostgreSQL"],
-            "github": "https://github.com/yourusername/project1"
-        }
-    ],
-    "certifications": [
-         {
-      "name": "Basic Python Certificate",
-      "issuer": "HackerRank",
-    },
-    {
-      "name": "Web Designing Certificate of Assessment",
-      "issuer": "TATA Communications",
-    },
-    {
-      "name": "Power BI Certificate",
-      "issuer": "TNX",
-    }
-    ]
-}
-
-# Skills data
-skills_data = {
-    "frontend": [
-        {"name": "React"},
-        {"name": "TypeScript"},
-        {"name": "HTML/CSS"},
-        {"name": "JavaScript"},
-        {"name": "Tamagui"},
-    ],
-    "backend": [
-        {"name": "Python"},
-        {"name": "Flask"},
-        {'name':'java'  },
-    ],
-    "databases": [
-        {"name": "MySQL"},
-        {"name": "SQL"},
-    ],
-    "tools": [
-        {"name": "Git"},
-        {"name": "Linux"},
-        {"name": "AWS"},
-        {"name":"Power BI"},
-    ]
-}
 
 @app.route('/')
 def home():
@@ -207,6 +107,24 @@ def contact():
 @app.route('/api/skills', methods=['GET'])
 def get_skills():
     return jsonify(skills_data)
+
+@app.route('/api/download-resume')
+def download_resume():
+    try:
+        # Pass resume_data to the create_resume_pdf function
+        pdf_buffer = create_resume_pdf(resume_data)
+        return send_file(
+            pdf_buffer,
+            download_name='Vandana_Madhireddy_Resume.pdf',
+            as_attachment=True,
+            mimetype='application/pdf'
+        )
+    except Exception as e:
+        import traceback
+        print(f"Error generating PDF: {str(e)}")
+        print("Traceback:")
+        print(traceback.format_exc())  # This will print the full error traceback
+        return jsonify({"error": f"Failed to generate resume: {str(e)}"}), 500
 
 print("EMAIL_USER:", os.getenv('EMAIL_USER'))  # Print the email user
 print("EMAIL_PASSWORD:", os.getenv('EMAIL_PASSWORD')) 
