@@ -63,34 +63,36 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white p-10">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-5xl font-bold mb-12 relative inline-block">
+    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white p-4 md:p-10">
+      <div className="max-w-4xl mx-auto" >
+        <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-12 relative inline-block">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
             Contact Me
           </span>
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Info */}
-          <div className="glass-card p-8 rounded-xl">
-            <h3 className="text-2xl font-semibold mb-6 text-blue-300">Get In Touch</h3>
+          <div className="glass-card rounded-xl p-6">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-blue-300">
+              Get In Touch
+            </h3>
             <div className="space-y-4">
               <a href="mailto:madhireddyvandana@gmail.com" 
-                 className="flex items-center space-x-3 text-lg hover:text-blue-300 transition-colors">
+                 className="flex items-center space-x-3 text-base md:text-lg hover:text-blue-300 transition-colors">
                 <FaEnvelope />
                 <span>madhireddyvandana@gmail.com</span>
               </a>
               <a href="tel:+919573925314" 
-                 className="flex items-center space-x-3 text-lg hover:text-blue-300 transition-colors">
+                 className="flex items-center space-x-3 text-base md:text-lg hover:text-blue-300 transition-colors">
                 <FaPhone />
                 <span>+91 9573925314</span>
               </a>
               <a href="https://linkedin.com/in/vandana-madhireddy-31661a241" 
                  target="_blank" 
                  rel="noopener noreferrer" 
-                 className="flex items-center space-x-3 text-lg hover:text-blue-300 transition-colors">
+                 className="flex items-center space-x-3 text-base md:text-lg hover:text-blue-300 transition-colors">
                 <FaLinkedin />
                 <span>LinkedIn Profile</span>
               </a>
@@ -98,10 +100,10 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="glass-card p-8 rounded-xl">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="glass-card rounded-xl p-6">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                <label className="block text-sm font-medium mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -109,12 +111,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full px-4 py-2 md:py-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                <label className="block text-sm font-medium mb-2">Email</label>
                 <input
                   type="email"
                   id="email"
@@ -122,12 +124,12 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full px-4 py-2 md:py-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
+                <label className="block text-sm font-medium mb-2">Subject</label>
                 <input
                   type="text"
                   id="subject"
@@ -135,12 +137,12 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full px-4 py-2 md:py-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                <label className="block text-sm font-medium mb-2">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -148,7 +150,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full px-4 py-2 md:py-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                 ></textarea>
               </div>
 

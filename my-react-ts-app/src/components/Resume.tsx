@@ -56,13 +56,13 @@ const Resume = () => {
   if (!resumeData) return <div>Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white p-8">
+    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white p-4 md:p-10">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4">{resumeData.personal_info.name}</h1>
-          <p className="text-2xl text-blue-300 mb-6">{resumeData.personal_info.title}</p>
-          <div className="flex justify-center space-x-6">
+        <header className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 relative inline-block">
+            {resumeData.personal_info.name}
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4 mt-4 md:mt-6">
             <a href={`mailto:${resumeData.personal_info.email}`} className="flex items-center">
               <FaEnvelope className="mr-2" /> {resumeData.personal_info.email}
             </a>
@@ -83,54 +83,59 @@ const Resume = () => {
           </div>
         </header>
 
-        {/* Experience */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-blue-300">Experience</h2>
-          {resumeData.experience.map((exp, index) => (
-            <div key={index} className="mb-6 glass-card p-6 rounded-xl">
-              <h3 className="text-xl font-semibold">{exp.title}</h3>
-              <p className="text-blue-300">{exp.company} | {exp.location}</p>
-              <p className="text-gray-400 mb-4">{exp.period}</p>
-              <ul className="list-disc list-inside space-y-2">
-                {exp.responsibilities.map((resp, idx) => (
-                  <li key={idx}>{resp}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </section>
-
-        {/* Skills */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-blue-300">Skills</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {Object.entries(resumeData.skills).map(([category, skills]) => (
-              <div key={category} className="glass-card p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4 capitalize">{category}</h3>
-                <ul className="space-y-2">
-                  {skills.map((skill, idx) => (
-                    <li key={idx}>{skill}</li>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="glass-card rounded-xl p-6">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-blue-300">
+              Experience
+            </h3>
+            {resumeData.experience.map((exp, index) => (
+              <div key={index} className="mb-6 glass-card p-6 rounded-xl">
+                <h4 className="text-xl font-semibold">{exp.title}</h4>
+                <p className="text-blue-300">{exp.company} | {exp.location}</p>
+                <p className="text-gray-400 mb-4">{exp.period}</p>
+                <ul className="list-disc list-inside space-y-2">
+                  {exp.responsibilities.map((resp, idx) => (
+                    <li key={idx}>{resp}</li>
                   ))}
                 </ul>
               </div>
             ))}
           </div>
-        </section>
 
-        {/* Education */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-blue-300">Education</h2>
-          {resumeData.education.map((edu, index) => (
-            <div key={index} className="glass-card p-6 rounded-xl">
-              <h3 className="text-xl font-semibold">{edu.degree}</h3>
-              <p className="text-blue-300">{edu.school}</p>
-              <p className="text-gray-400">{edu.year} | GPA: {edu.gpa}</p>
+          <div className="glass-card rounded-xl p-6">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-blue-300">
+              Education
+            </h3>
+            {resumeData.education.map((edu, index) => (
+              <div key={index} className="glass-card p-6 rounded-xl mb-6">
+                <h4 className="text-xl font-semibold">{edu.degree}</h4>
+                <p className="text-blue-300">{edu.school}</p>
+                <p className="text-gray-400">{edu.year} | GPA: {edu.gpa}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="glass-card rounded-xl col-span-1 md:col-span-2 p-6 mb-6" >
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-blue-300">
+              Skills
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {Object.entries(resumeData.skills).map(([category, skills]) => (
+                <div key={category} className="glass-card p-6 rounded-xl">
+                  <h4 className="text-xl font-semibold mb-4 capitalize">{category}</h4>
+                  <ul className="space-y-2">
+                    {skills.map((skill, idx) => (
+                      <li key={idx}>{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
-          ))}
-        </section>
-
+            
+          </div>
+        </div>
         {/* Certifications */}
-        <section>
+        <section className="glass-card rounded-xl col-span-1 md:col-span-2 p-6">
           <h2 className="text-3xl font-bold mb-6 text-blue-300">Certifications</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {resumeData.certifications.map((cert, index) => (
@@ -143,7 +148,7 @@ const Resume = () => {
           </div>
         </section>
       </div>
-    </div>
+    </section>
   );
 };
 

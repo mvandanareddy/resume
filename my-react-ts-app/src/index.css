@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  @apply overflow-x-hidden;
 }
 
 .glass-card {
@@ -13,10 +14,11 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  @apply p-4 md:p-8;
 }
 
 .social-icon-link {
-  @apply relative p-3 rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300;
+  @apply relative p-2 md:p-3 rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300;
 }
 
 .social-icon-link::before {
@@ -28,9 +30,38 @@ body {
   @apply opacity-25;
 }
 
+.responsive-container {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.text-responsive {
+  @apply text-base sm:text-lg md:text-xl lg:text-2xl;
+}
+
+.heading-responsive {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+}
+
+.grid-responsive {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8;
+}
+
+.section-spacing {
+  @apply py-8 md:py-12 lg:py-16;
+}
+
 .skill-bar-fill {
   animation: fillBar 1.5s ease-out forwards;
   transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow,
+  .skill-bar-fill {
+    animation: none;
+  }
 }
 
 @keyframes fillBar {
@@ -74,4 +105,34 @@ body {
 .animate-float-slow {
   animation: float 10s ease-in-out infinite;
   animation-delay: 2s;
+}
+
+.mobile-menu {
+  @apply fixed top-0 left-0 w-full h-full bg-gray-900 transform transition-transform duration-300 ease-in-out z-50;
+}
+
+.mobile-menu.hidden {
+  transform: translateX(-100%);
+}
+
+.touch-target {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+.form-input {
+  @apply w-full px-4 py-3 rounded-lg;
+  font-size: 16px;
+}
+
+.responsive-image {
+  @apply w-full h-auto object-cover;
+}
+
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+  @apply overflow-y-auto;
+}
+
+.responsive-button {
+  @apply px-4 md:px-6 py-2 md:py-3 text-sm md:text-base;
 }
