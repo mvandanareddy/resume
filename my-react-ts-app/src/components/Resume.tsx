@@ -11,6 +11,11 @@ interface ResumeData {
     linkedin: string;
     github: string;
   };
+  personal_projects: Array<{
+    name: string;
+    description: string;
+    deployed_link: string;
+  }>;
   education: Array<{
     degree: string;
     school: string;
@@ -34,8 +39,9 @@ interface ResumeData {
     name: string;
     description: string;
     technologies: string[];
-    github: string;
+    // responsibilities: string[];
   }>;
+  
   certifications: Array<{
     name: string;
     issuer: string;
@@ -134,7 +140,47 @@ const Resume = () => {
             
           </div>
         </div>
+          
+          {/* Projects */} 
+          <div className='gap-6 space-6 space-y-6'>
+            <section className=" glass-card rounded-xl p-6 m-b-6">
+            <div className="  p-6">
+              <h2 className="text-3xl font-bold mb-6 text-blue-300">Projects</h2>
+              <div className="gap-6 ">
+                {resumeData.projects.map((project, index) => (
+                  <div key={index} className="glass-card p-6 rounded-xl m-6">
+                    <h3 className="text-xl font-semibold">{project.name}</h3>
+                    <p className="text-blue-300">{project.description}</p>
+                    <p className="text-gray-400">Technologies: {project.technologies.join(', ')}</p>
+                    <p> Responsibilities:</p>
+                    {/* <ul className="list-disc list-inside">
+                      {project.responsibilities.map((resp, idx) => (
+                        <li key={idx}>{resp}</li>
+                      ))}
+                    </ul> */}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+                      {/* Personal Projects */}
+
+          <section className="glass-card rounded-xl col-span-1 md:col-span-2 p-6">
+  <h2 className="text-3xl font-bold mb-6 text-blue-300">Personal Projects</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {resumeData.personal_projects.map((project, index) => (
+      <div key={index} className="glass-card p-6 rounded-xl">
+        <h3 className="text-xl font-semibold">{project.name}</h3>
+        <p className="text-blue-300">{project.description}</p>
+        <a href={project.deployed_link} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+          🔗 Deployed Link
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
         {/* Certifications */}
+
         <section className="glass-card rounded-xl col-span-1 md:col-span-2 p-6">
           <h2 className="text-3xl font-bold mb-6 text-blue-300">Certifications</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -147,6 +193,8 @@ const Resume = () => {
             ))}
           </div>
         </section>
+        </div> 
+
       </div>
     </section>
   );

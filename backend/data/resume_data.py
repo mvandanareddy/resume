@@ -9,72 +9,133 @@ resume_data = {
         "github": "https://github.com/mvandanareddy/"
     },
    
-  "education": [
-    {
-      "degree": "Bachelor of Technology",
-      "school": "Narasimha Reddy Engineering College",
-      "year": "2019-2023",
-      "gpa": "7.79"
-    },
-    {
-      "degree": "Intermediate Education",
-      "school": "Vandana Junior College",
-      "year": "2017-2019",
-      "percentage": "85%"
-    },
-    {
-      "degree": "SSC",
-      "school": "Z.P. High School Muneerabad",
-      "year": "2007-2017",
-      "gpa": "9.2"
-    }
-  ],
-
+    "education": [
+        {
+            "degree": "Bachelor of Technology",
+            "school": "Narasimha Reddy Engineering College",
+            "year": "2019-2023",
+            "gpa": "7.79"
+        },
+        {
+            "degree": "Intermediate Education",
+            "school": "Vandana Junior College",
+            "year": "2017-2019",
+            "percentage": "85%"
+        },
+        {
+            "degree": "SSC",
+            "school": "Z.P. High School Muneerabad",
+            "year": "2007-2017",
+            "gpa": "9.2"
+        }
+    ],
 
     "experience": [
         {
             "title": "Software Developer",
             "company": "FlyingFox Labs Pvt Ltd",
             "location": "Hyderabad, India",
-            "period": "july 2024 - Present",
+            "period": "July 2024 - Present",
             "responsibilities": [
-             " Developed and maintained scalable web applications using React, TypeScript, and WordPress." , 
-            "Integrated user authentication systems using JWT and OAuth for secure access."  ,
-            "Designed intuitive, responsive UI components with Tamagui, enhancing user experience." , 
-            "Conducted rigorous testing to ensure application reliability and performance."  ,
-
+                "Developed and maintained scalable web applications using React, TypeScript, and WordPress.",
+                "Integrated user authentication systems using JWT and OAuth for secure access.",
+                "Designed intuitive, responsive UI components with Tamagui, enhancing user experience.",
+                "Conducted rigorous testing to ensure application reliability and performance."
             ]
         }
     ],
     "skills": {
         "programming": ["Python", "JavaScript", "TypeScript", "Java"],
-        "frameworks": ["React", "Flask" ],
+        "frameworks": ["React", "Flask"],
         "frontend": ["HTML/CSS", "JavaScript"],
-        "databases": ["SQL","MySQL"],
-        "tools": ["Git", "AWS", "Power BI", "Linux"]
+        "databases": ["SQL", "MySQL"],
+        "tools": ["Git", "AWS", "Power BI", "Linux", "Frappe"]
     },
     "projects": [
         {
-            "name": "E-commerce Platform",
-            "description": "Full-stack e-commerce application",
-            "technologies": ["React", "Node.js", "MongoDB"],
-            "github": "https://github.com/yourusername/ecommerce"
-        }
+            "name": "Keckokify – Authentication System",
+            "description": "Developed a secure authentication system enabling user login, registration, and social login integration while leveraging JWT for session management.",
+            "technologies": ["React", "TypeScript", "JWT", "Tamagui"],
+            "responsibilities": [
+                "Designed and implemented a secure authentication flow, including registration, login, and password recovery.",
+                "Integrated OAuth-based social logins and JWT for session management, ensuring scalability and security.",
+                "Developed reusable UI components and optimized front-end performance using React and TypeScript.",
+                "Conducted unit and integration testing to enhance security and ensure a seamless user experience.",
+                "Applied Tamagui for responsive, user-friendly UI design across multiple devices."
+            ]
+        },
+        {
+            "name": "WordPress NFT Website",
+            "description": "Built a dynamic WordPress website for NFT showcasing and minting, integrating blockchain APIs for real-time transactions.",
+            "technologies": ["WordPress", "HTML", "CSS", "JavaScript", "Blockchain API"],
+            "responsibilities": [
+                "Developed a customized WordPress platform for NFT display and blockchain API integration.",
+                "Implemented NFT minting functionality and interactive user features using blockchain technology.",
+                "Designed a responsive and engaging front-end using HTML, CSS, and JavaScript.",
+                "Optimized site performance, enhancing speed and mobile responsiveness.",
+                "Ensured security compliance and maintained clean, industry-standard code."
+            ]
+        },
+        {
+            "name": "Industrial Device Monitoring System",
+            "description": "Designed and developed a web application for industrial process monitoring, device management, and real-time data analysis.",
+            "technologies": ["Python (Flask)", "HTML", "CSS", "JavaScript", "MySQL"],
+            "responsibilities": [
+                "Developed and maintained backend services using Flask for industrial process monitoring.",
+                "Designed a responsive, intuitive user interface for real-time data visualization.",
+                "Optimized database performance and scalability using MySQL.",
+                "Identified, reported, and resolved bugs to enhance system stability and performance."
+            ]
+        },
+        {
+            "name": "Who Am I – Multiplayer Game",
+            "description": "Developed a multiplayer game where players answer questions generated by an administrator via Frappe or GraphQL. Answers are displayed randomly, and players must guess who provided each response to earn points.",
+            "technologies": ["TypeScript", "React", "GraphQL", "Frappe", "SQL"],
+            "responsibilities": [
+                "Developed the front-end using React and TypeScript for an engaging user experience.",
+                "Integrated GraphQL and Frappe for seamless question management and data retrieval.",
+                "Designed and implemented real-time game logic and multiplayer interactions.",
+                "Optimized database queries to improve performance and scalability."
+            ]
+        },
+      
     ],
     "certifications": [
-         {
-      "name": "Basic Python Certificate",
-      "issuer": "HackerRank",
+        {
+            "name": "Basic Python Certificate",
+            "issuer": "HackerRank"
+        },
+        {
+            "name": "Web Designing Certificate of Assessment",
+            "issuer": "TATA Communications"
+        },
+        {
+            "name": "Power BI Certificate",
+            "issuer": "TNX"
+        }
+    ],
+     'personal_projects':[
+    {
+        "name": "Matching Game",
+        "description": "A fun and interactive memory-matching game developed using React.",
+        "deployed_link": "https://matching-game-omega.vercel.app/"
     },
     {
-      "name": "Web Designing Certificate of Assessment",
-      "issuer": "TATA Communications",
+        "name": "Movie Search App",
+        "description": "A web application that allows users to search for movies using an external API.",
+        "deployed_link": "https://movie-search-app-pi-pied.vercel.app/"
     },
     {
-      "name": "Power BI Certificate",
-      "issuer": "TNX",
+        "name": "Sudoku Solver",
+        "description": "A React-based Sudoku solver that helps users solve puzzles efficiently.",
+        "deployed_link": "https://sudoko-react.vercel.app/"
+    },
+    {
+        "name": "Calculator App",
+        "description": "A simple yet functional calculator built with React.",
+        "deployed_link": "https://calculator-app-three-hazel.vercel.app/"
     }
-    ]
+]
 }
 
 # Skills data
@@ -84,21 +145,21 @@ skills_data = {
         {"name": "TypeScript"},
         {"name": "HTML/CSS"},
         {"name": "JavaScript"},
-        {"name": "Tamagui"},
+        {"name": "Tamagui"}
     ],
     "backend": [
         {"name": "Python"},
         {"name": "Flask"},
-        {'name':'java'  },
+        {"name": "Java"}
     ],
     "databases": [
         {"name": "MySQL"},
-        {"name": "SQL"},
+        {"name": "SQL"}
     ],
     "tools": [
         {"name": "Git"},
         {"name": "Linux"},
         {"name": "AWS"},
-        {"name":"Power BI"},
+        {"name": "Power BI"}
     ]
 }
