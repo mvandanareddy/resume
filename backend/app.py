@@ -32,9 +32,6 @@ app.config.update(
 
 mail = Mail(app)
 
-# Resume data
-
-
 @app.route('/')
 def home():
     return jsonify({
@@ -52,14 +49,12 @@ def get_resume():
 
 @app.route('/api/contact', methods=['GET', 'POST', 'OPTIONS'])
 def contact():
-    # Handle OPTIONS request for CORS preflight
     if request.method == 'OPTIONS':
         response = jsonify({'status': 'OK'})
         response.headers.add('Access-Control-Allow-Methods', 'POST')
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
         return response
 
-    # Handle POST request
     if request.method == 'POST':
         try:
             data = request.get_json()
@@ -72,11 +67,9 @@ def contact():
             subject = data.get('subject', 'New Contact Form Submission')
             message = data.get('message', '')
 
-            # Validate required fields
             if not all([name, email, message]):
                 return jsonify({"error": "Missing required fields"}), 400
 
-            # Create the email message
             msg = Message(
                 subject=f"Portfolio Contact: {subject}",
                 sender=app.config['MAIL_USERNAME'],
@@ -92,7 +85,6 @@ def contact():
                 """
             )
 
-            # Send the email
             mail.send(msg)
             
             return jsonify({"message": "Message sent successfully!"})
@@ -101,7 +93,6 @@ def contact():
             print(f"Error processing request: {e}")
             return jsonify({"error": str(e)}), 500
 
-    # Handle GET request
     return jsonify({"message": "Contact endpoint is working"}), 200
 
 @app.route('/api/skills', methods=['GET'])
@@ -111,7 +102,6 @@ def get_skills():
 @app.route('/api/download-resume')
 def download_resume():
     try:
-        # Pass resume_data to the create_resume_pdf function
         pdf_buffer = create_resume_pdf(resume_data)
         return send_file(
             pdf_buffer,

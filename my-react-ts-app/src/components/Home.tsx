@@ -6,7 +6,7 @@ const Home = () => {
     try {
       const response = await fetch('http://localhost:5000/api/download-resume');
       if (!response.ok) {
-        throw new Error('Failed to download resume');
+        throw new Error(`Failed to download resume: ${response.statusText}`);
       }
       
       const blob = await response.blob();
@@ -25,25 +25,24 @@ const Home = () => {
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white p-4 md:p-10 relative overflow-hidden">
-
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
       <div className="absolute inset-0 pointer-events-none">
         <div className="animate-float absolute top-1/4 left-1/4 w-20 h-20 bg-blue-500 rounded-full opacity-20"></div>
         <div className="animate-float-delayed absolute top-1/2 right-1/3 w-16 h-16 bg-purple-500 rounded-full opacity-20"></div>
         <div className="animate-float-slow absolute bottom-1/4 right-1/4 w-24 h-24 bg-indigo-500 rounded-full opacity-20"></div>
       </div>
-      <div className="mb-8 relative  justify-center items-center">
+      <div className="mb-8 relative justify-center items-center">
         <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-400 shadow-lg m-auto mb-8 justify-center items-center">
           <img 
-            src="/path/to/your-profile-photo.jpg" 
+            src="/Capture_photo.JPG"
             alt="Vandana Madhireddy" 
             className="w-full h-full object-cover justify-center items-center"
           />
         </div>
-  <div className="max-w-4xl mx-auto text-center px-4 md:px-0">
+        <div className="max-w-4xl mx-auto text-center px-4 md:px-0">
           <div className="mb-8 relative inline-block">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
               Vandana Madhireddy
             </h1>
           </div>
