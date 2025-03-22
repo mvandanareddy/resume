@@ -53,7 +53,7 @@ const Resume = () => {
   const [resumeData, setResumeData] = React.useState<ResumeData | null>(null);
 
   React.useEffect(() => {
-    fetch('http://localhost:5000/api/resume')
+    fetch('https://resume-rld3.onrender.com/api/resume')
       .then(res => res.json())
       .then(data => setResumeData(data))
       .catch(err => console.error('Error fetching resume:', err));

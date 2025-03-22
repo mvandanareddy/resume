@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 
 interface Skill {
   name: string;
@@ -20,7 +20,7 @@ const Skills = () => {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/skills');
+        const response = await fetch('https://resume-rld3.onrender.com/api/skills');
         console.log('Response status:', response.status); // Debug log
         
         if (!response.ok) {

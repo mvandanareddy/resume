@@ -1,10 +1,9 @@
-import React from 'react';
 import { FaLinkedin, FaEnvelope, FaGithub, FaDownload } from 'react-icons/fa';
 
 const Home = () => {
   const handleDownloadResume = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/download-resume');
+      const response = await fetch('https://resume-rld3.onrender.com/api/download-resume');
       if (!response.ok) {
         throw new Error(`Failed to download resume: ${response.statusText}`);
       }
