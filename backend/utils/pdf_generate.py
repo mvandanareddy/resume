@@ -4,7 +4,6 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from io import BytesIO
-from data.resume_data import resume_data, skills_data
 
 def create_resume_pdf(resume_data):
     buffer = BytesIO()
@@ -30,18 +29,18 @@ def create_resume_pdf(resume_data):
     )
 
     # Personal Information
-    personal_info = resume_data['personal_info']
-    story.append(Paragraph(personal_info['name'], title_style))
-    story.append(Paragraph(personal_info['title'], styles['Heading2']))
+    personal_info = resume_data.get('personal_info', {})
+    story.append(Paragraph(personal_info.get('name', 'N/A'), title_style))
+    story.append(Paragraph(personal_info.get('title', 'N/A'), styles['Heading2']))
     story.append(Spacer(1, 20))
     
     # Contact Information
     contact_info = [
-        ["Email:", personal_info['email']],
-        ["Phone:", personal_info['phone']],
-        ["Location:", personal_info['location']],
-        ["LinkedIn:", personal_info['linkedin']],
-        ["GitHub:", personal_info['github']]
+        ["Email:", personal_info.get('email', 'N/A')],
+        ["Phone:", personal_info.get('phone', 'N/A')],
+        ["Location:", personal_info.get('location', 'N/A')],
+        ["LinkedIn:", personal_info.get('linkedin', 'N/A')],
+        ["GitHub:", personal_info.get('github', 'N/A')]  # Safely access the GitHub key
     ]
     
     t = Table(contact_info, colWidths=[1.5*inch, 4*inch])
@@ -57,12 +56,12 @@ def create_resume_pdf(resume_data):
 
     # Education
     story.append(Paragraph("Education", heading_style))
-    for edu in resume_data['education']:
+    for edu in resume_data.get('education', []):
         edu_text = f"""
         <para>
-        <b>{edu['degree']}</b><br/>
-        {edu['school']}<br/>
-        {edu['year']} | GPA: {edu.get('gpa', '')}
+        <b>{edu.get('degree', 'N/A')}</b><br/>
+        {edu.get('school', 'N/A')}<br/>
+        {edu.get('year', 'N/A')} | GPA: {edu.get('gpa', 'N/A')}
         </para>
         """
         story.append(Paragraph(edu_text, styles['Normal']))
@@ -70,13 +69,13 @@ def create_resume_pdf(resume_data):
 
     # Experience
     story.append(Paragraph("Experience", heading_style))
-    for exp in resume_data['experience']:
+    for exp in resume_data.get('experience', []):
         exp_text = f"""
         <para>
-        <b>{exp['title']}</b> | {exp['company']}<br/>
-        {exp['location']} | {exp['period']}<br/>
+        <b>{exp.get('title', 'N/A')}</b> | {exp.get('company', 'N/A')}<br/>
+        {exp.get('location', 'N/A')} | {exp.get('period', 'N/A')}<br/>
         """
-        for resp in exp['responsibilities']:
+        for resp in exp.get('responsibilities', []):
             exp_text += f"• {resp}<br/>"
         exp_text += "</para>"
         story.append(Paragraph(exp_text, styles['Normal']))
@@ -84,7 +83,7 @@ def create_resume_pdf(resume_data):
 
     # Skills
     story.append(Paragraph("Skills", heading_style))
-    for category, skills in resume_data['skills'].items():
+    for category, skills in resume_data.get('skills', {}).items():
         skills_text = f"""
         <para>
         <b>{category.title()}:</b> {', '.join(skills)}
@@ -95,13 +94,13 @@ def create_resume_pdf(resume_data):
 
     # Projects
     story.append(Paragraph("Projects", heading_style))
-    for project in resume_data['projects']:
+    for project in resume_data.get('projects', []):
         project_text = f"""
         <para>
-        <b>{project['name']}</b><br/>
-        • {project['description']}<br/>
-        • Technologies: {', '.join(project['technologies'])}<br/>
-        • GitHub: {project['github']}
+        <b>{project.get('name', 'N/A')}</b><br/>
+        • {project.get('description', 'N/A')}<br/>
+        • Technologies: {', '.join(project.get('technologies', []))}<br/>
+        • GitHub: {project.get('github', 'N/A')}
         </para>
         """
         story.append(Paragraph(project_text, styles['Normal']))
@@ -109,10 +108,10 @@ def create_resume_pdf(resume_data):
 
     # Certifications
     story.append(Paragraph("Certifications", heading_style))
-    for cert in resume_data['certifications']:
+    for cert in resume_data.get('certifications', []):
         cert_text = f"""
         <para>
-        • {cert['name']} | {cert['issuer']}
+        • {cert.get('name', 'N/A')} | {cert.get('issuer', 'N/A')}
         </para>
         """
         story.append(Paragraph(cert_text, styles['Normal']))

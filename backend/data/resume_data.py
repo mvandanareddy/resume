@@ -1,12 +1,12 @@
 resume_data = {
-    "personal_info": {
+     "personal_info": {
         "name": "Vandana Madhireddy",
         "title": "Software Developer",
         "email": "madhireddyvandana@gmail.com",
         "phone": "+91 9573925314",
         "location": "Hyderabad, India",
         "linkedin": "https://linkedin.com/in/vandana-madhireddy-31661a241",
-        "github": "https://github.com/mvandanareddy/"
+        "github": "https://github.com/mvandanareddy"  # Ensure this key exists
     },
    
     "education": [
