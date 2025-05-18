@@ -152,7 +152,7 @@ const Resume = () => {
                     <h3 className="text-xl font-semibold">{project.name}</h3>
                     <p className="text-blue-300">{project.description}</p>
                     <p className="text-gray-400">Technologies: {project.technologies.join(', ')}</p>
-                    <p> Responsibilities:</p>
+                    {/* <p> Responsibilities:</p> */}
                     {/* <ul className="list-disc list-inside">
                       {project.responsibilities.map((resp, idx) => (
                         <li key={idx}>{resp}</li>
