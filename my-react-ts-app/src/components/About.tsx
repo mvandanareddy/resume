@@ -33,7 +33,7 @@ const About = () => (
             </li>
             <li className="flex items-center text-lg">
               <span className="text-2xl mr-4">💼</span>
-              <span className="text-blue-100">8+ months of development experience</span>
+              <span className="text-blue-100">10+ months of development experience</span>
             </li>
             <li className="flex items-center text-lg">
               <span className="text-2xl mr-4">🌟</span>

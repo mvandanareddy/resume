@@ -20,6 +20,7 @@ resume_data = {
             "degree": "Intermediate Education",
             "school": "Vandana Junior College",
             "year": "2017-2019",
+            "gpa": "8.8",
             "percentage": "85%"
         },
         {
@@ -55,7 +56,7 @@ resume_data = {
         {
             "name": "Keckokify – Authentication System",
             "description": "Developed a secure authentication system enabling user login, registration, and social login integration while leveraging JWT for session management.",
-            "technologies": ["React", "TypeScript", "JWT", "Tamagui"],
+            "technologies": ["React", "TypeScript", "Tamagui"],
             "responsibilities": [
                 "Designed and implemented a secure authentication flow, including registration, login, and password recovery.",
                 "Integrated OAuth-based social logins and JWT for session management, ensuring scalability and security.",
@@ -67,7 +68,7 @@ resume_data = {
         {
             "name": "WordPress NFT Website",
             "description": "Built a dynamic WordPress website for NFT showcasing and minting, integrating blockchain APIs for real-time transactions.",
-            "technologies": ["WordPress", "HTML", "CSS", "JavaScript", "Blockchain API"],
+            "technologies": ["WordPress", "HTML", "CSS", "JavaScript"],
             "responsibilities": [
                 "Developed a customized WordPress platform for NFT display and blockchain API integration.",
                 "Implemented NFT minting functionality and interactive user features using blockchain technology.",
