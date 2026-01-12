@@ -100,7 +100,7 @@ resume_data = {
             ]
         },
         {
-                "name": "todo-app",
+                "name": "Todo-App",
                 "description": "A task management app to help users organize their daily activities.",
                 "technologies": ["React", "HTML", "CSS","mongoDB", "Express.js", "Node.js"],
                 "responsibilities": [
