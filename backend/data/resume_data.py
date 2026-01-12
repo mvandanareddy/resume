@@ -36,7 +36,7 @@ resume_data = {
             "title": "Software Developer",
             "company": "FlyingFox Labs Pvt Ltd",
             "location": "Hyderabad, India",
-            "period": "July 2024 - Present",
+            "period": "July 2024 - April 2025",
             "responsibilities": [
                 "Developed and maintained scalable web applications using React, TypeScript, and WordPress.",
                 "Integrated user authentication systems using JWT and OAuth for secure access.",
@@ -46,11 +46,11 @@ resume_data = {
         }
     ],
     "skills": {
-        "programming": ["Python", "JavaScript", "TypeScript", "Java"],
-        "frameworks": ["React", "Flask"],
-        "frontend": ["HTML/CSS", "JavaScript"],
-        "databases": ["SQL", "MySQL"],
-        "tools": ["Git", "AWS", "Power BI", "Linux", "Frappe"]
+        "programming": ["Python", "JavaScript", "TypeScript"],
+        "backend": [ "Flask", "Node.js", "Express.js"],
+        "frontend": ["HTML5", "CSS3", "Tailwind CSS", "React"],
+        "databases": ["MongoDB", "MySQL", "SQL"],
+        "tools": ["Git", "VS Code", "Linux", "WordPress"]
     },
     "projects": [
         {
@@ -99,6 +99,16 @@ resume_data = {
                 "Optimized database queries to improve performance and scalability."
             ]
         },
+        {
+                "name": "todo-app",
+                "description": "A task management app to help users organize their daily activities.",
+                "technologies": ["React", "HTML", "CSS","mongoDB", "Express.js", "Node.js"],
+                "responsibilities": [
+                    "Developed a full-stack task management application using the MERN stack.",
+                    "Ensured responsive design for optimal usability across devices.",
+                    "Integrated MongoDB for efficient data storage and retrieval."
+                ]
+        },
       
     ],
     "certifications": [
@@ -135,6 +145,11 @@ resume_data = {
         "name": "Calculator App",
         "description": "A simple yet functional calculator built with React.",
         "deployed_link": "https://calculator-app-three-hazel.vercel.app/"
+    },
+    {
+        "name": "To-Do List App",
+        "description": "A task management app to help users organize their daily activities.",
+        "deployed_link": "https://my-todo-app-lovat-iota.vercel.app/"
     }
 ]
 }
@@ -143,24 +158,27 @@ resume_data = {
 skills_data = {
     "frontend": [
         {"name": "React"},
-        {"name": "TypeScript"},
-        {"name": "HTML/CSS"},
-        {"name": "JavaScript"},
-        {"name": "Tamagui"}
+        {"name": "HTML5"},
+        {"name": "CSS3"},
+        {"name": "Tailwind CSS"},
+        {"name": "JavaScript"}
     ],
     "backend": [
         {"name": "Python"},
         {"name": "Flask"},
-        {"name": "Java"}
+        {"name": "Node.js"},
+        {"name": "Express.js"}
     ],
     "databases": [
+        {"name": "MongoDB"},
         {"name": "MySQL"},
         {"name": "SQL"}
     ],
     "tools": [
         {"name": "Git"},
+        {"name": "VS Code"},
+        {"name": "Postman"},
         {"name": "Linux"},
-        {"name": "AWS"},
-        {"name": "Power BI"}
+        {"name": "WordPress"}
     ]
 }
